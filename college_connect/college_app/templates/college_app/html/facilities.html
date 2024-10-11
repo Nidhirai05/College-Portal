@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facilities</title>
+    <style>
+        .box-container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .facilities-div{
+            width: 50%;
+            height: 200px;
+            background-color: aquamarine;
+            border: 3px solid navy;
+            border-radius: 20px;
+
+        }
+
+        .image{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            border: 3px solid navy;
+            border-radius: 50%;
+        }
+
+        p{
+            color: navy;
+            font-size: 17px;
+            font-family: Verdana;
+            font-weight: 35px;
+        }
+    </style>
+    {% include 'college_app/html/common_css.html'%}
+</head>
+<body style="background-color: beige; margin: 0px;">
+    {%include 'college_app/html/header.html'%}
+
+    <h2 style="text-align: center; color: chocolate;"> Facilities we provides in our college!!!</h2>
+    <div class="box-container">
+        <div class="facilities-div" style="text-align: center;">
+                <img src="{%static 'college_app/image/library.jpg'%}" alt="" class="image">
+                <p>Our college provides library facilities.It contains different types of books.</p>
+        </div>
+
+        <div class="facilities-div" style=" text-align: center;">
+            <img src="{%static 'college_app/image/Cafeteria.jpg'%}" alt="" class="image">
+            <p>Our college provides Cafeteria facilities also. It provides best quality foods.</p>
+        </div>
+
+        <div class="facilities-div" style=" text-align: center;">
+            <img src="{%static 'college_app/image/transport.png'%}" alt="" class="image">
+
+            <p>Our college provides transport facilities which drops the student safely by following the proper rules and regulations of traffic.</p>
+        </div>
+
+        <div class="facilities-div" style=" text-align: center;">
+            <img src="{%static 'college_app/image/Sports.jpg'%}" alt="" class="image">
+
+            <p>Our college provides sports area facilities which keeps the student mind healthy.</p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

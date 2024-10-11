@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  {%load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultancyRegsitration</title>
+
+    {% include 'college_app/html/common_css.html'%}
+    <style>
+
+      p{font-weight: bold;
+        color:red;
+        font-family: "Monotype Corsiva";
+        font-size:30px
+      }
+
+      div.box{
+
+        width:200px;
+        height: 200px;
+        float: left;
+        margin-left: 200px;
+        margin-top:100px;
+      
+      }
+    </style>
+</head>
+<body style="background-color: beige;margin: 0px;">
+
+  {% include 'college_app/html/header.html' %}
+    <!-- <div style="width:100%;height: 60px;background-color: aquamarine;">
+      <h3 style="text-align: center;margin: 0px;vertical-align:middle">
+     ConsultancyRegistration
+     </h3>
+    </div> -->
+    <div style="display: flex; justify-content: center; align-items: center; height:60px;width:100%;background-color: aquamarine;">
+      <h3 style="margin: 0;">ConsultancyRegistration</h3>
+  </div>
+   
+    {%if messages%}
+
+    {%for m in messages %}
+      <!-- <h2>{{m}}</h2> -->
+  
+      <div class="alert alert-danger alert-dismissible fade show" role="alert"
+       style="width:50%;margin-left: auto;margin-right: auto;margin-top: 10px;">
+        <strong style="color:red">{{m}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+  
+    {%endfor%}
+  
+    {%endif%}
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-6">
+    <form method="post" action="/c_registration/">
+       {%csrf_token%}
+       <div class="form-floating mb-3">
+        <input type="text" name="cid" class="form-control"  placeholder="name@example.com">
+        <label for="name">ConsultancyID</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" name="password" class="form-control"  placeholder="name@example.com">
+        <label for="password">Password</label>
+      </div>
+  <div class="form-floating mb-3">
+    <input type="text" name="cname" class="form-control"  placeholder="name@example.com">
+    <label for="cname">CosultancyName</label>
+  </div>
+  
+  <div class="form-floating mb-3">
+    <input type="email"  name="email" class="form-control"  placeholder="name@example.com"> 
+    <label for="email">Email</label>
+  </div>
+  
+  <div class="form-floating mb-3">
+    <input type="tel" name="phone" class="form-control"  placeholder="name@example.com">
+    <label for="phone">Phone</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <textarea rows=5 cols=80 name="area" class="form-control"   placeholder="question"></textarea>
+     <label for="area">Workarea	</label>
+   </div>
+   
+  <div class="form-floating mb-3">
+   <textarea rows=5 cols=80 name="address" class="form-control"   placeholder="question"></textarea>
+    <label for="address">Address	</label>
+  </div>
+  
+  <div class="form-floating mb-3" style="text-align:center">
+   
+  <button  class="btn btn-danger" >Submit</button>
+  
+  
+  </div>
+  </form>
+        </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
